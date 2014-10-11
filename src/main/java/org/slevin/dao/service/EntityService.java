@@ -1,6 +1,5 @@
 package org.slevin.dao.service;
 
-import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -78,7 +77,8 @@ public class EntityService<E>  implements EntityDao<E> {
 	    this.entityManager = entityManager;
 	}
 
-	    public Class<E> getEntityClass() throws Exception{      
+	    @SuppressWarnings("unchecked")
+		public Class<E> getEntityClass() throws Exception{      
 	   if (entityClass == null) {
 	            Type type = getClass().getGenericSuperclass();
 	          if (type instanceof  ParameterizedType) 

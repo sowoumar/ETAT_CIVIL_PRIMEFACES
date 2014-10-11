@@ -41,7 +41,7 @@ public class persistenceTests {
 	public void testDaoImpl() throws Exception {
 		Item item = new Item();
 		itemDao.persist(item);
-		assertEquals(6, itemDao.count());
+		assertEquals(1, itemDao.count());
 	}
 	
 
