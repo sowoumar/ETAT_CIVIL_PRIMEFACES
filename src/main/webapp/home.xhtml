@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
@@ -15,49 +15,38 @@
 			<div class="well well-lg">
 
 
-				<p:fieldset legend="Home Page" toggleable="true" toggleSpeed="500">
-                    <h:outputLabel for="username" value="Username:" />
-                    <p:inputText id="username" value="#{userLoginView.username}" required="true" label="username" />
+				<p:fieldset legend="GESTION DES ETATS CIVILS" toggleable="true" toggleSpeed="500">
+                    <div style="height:50px">
+                    <h:form>
+                        <p:growl id="msgs" showDetail="true" />
 
-                    <h:outputLabel for="password" value="Password:" />
-                    <p:password id="password" value="#{userLoginView.password}" required="true" label="password" />
-                    <p:growl id="msgs" showDetail="true" />
-                    <h:panelGrid columns="2" cellpadding="5">
-                        <p:outputLabel for="inline" value="Inline:" />
-                        <p:calendar id="inline" value="#{calendarView.date1}" mode="inline" />
+                        <p:dashboard id="board" model="#{dashboardView.model}">
+                            <p:ajax event="reorder" listener="#{dashboardView.handleReorder}" update="msgs" />
 
-                        <p:outputLabel for="popup" value="Popup:" />
-                        <p:calendar id="popup" value="#{calendarView.date2}" />
+                            <p:panel id="sports" header="DECLARATION EXTRAIT">
+                                <h:link outcome="/views/extrait/new.xhtml"  value="Declarer extrait naissance"/>
+                            </p:panel>
 
-                        <p:outputLabel for="button" value="Button:" />
-                        <p:calendar id="button" value="#{calendarView.date3}" showOn="button" />
+                            <p:panel id="finance" header="Finance">
+                                <h:outputText value="Finance Content" />
+                            </p:panel>
 
-                        <p:outputLabel for="event" value="Select Event:" />
-                        <p:calendar id="event" value="#{calendarView.date4}">
-                            <p:ajax event="dateSelect" listener="#{calendarView.onDateSelect}" update="msgs" />
-                        </p:calendar>
+                            <p:panel id="lifestyle" header="Lifestyle">
+                                <h:outputText value="Lifestyle Content"  />
+                            </p:panel>
 
-                        <p:outputLabel for="german" value="German:" />
-                        <p:calendar id="german" value="#{calendarView.date5}" locale="de" navigator="true" pattern="yyyy-MMM-dd" />
+                            <p:panel id="weather" header="Weather">
+                                <h:outputText value="Weather Content" />
+                            </p:panel>
 
-                        <p:outputLabel for="restricted" value="Restricted:" />
-                        <p:calendar id="restricted" value="#{calendarView.date6}" mindate="4/1/14" maxdate="7/1/14" />
+                            <p:panel id="politics" header="Politics">
+                                <h:outputText value="Politics Content" />
+                            </p:panel>
+                        </p:dashboard>
 
-                        <p:outputLabel for="multi" value="Multiple:" />
-                        <p:calendar id="multi" value="#{calendarView.date7}" pages="3" />
-
-                        <p:outputLabel for="effect" value="Effect:" />
-                        <p:calendar id="effect" value="#{calendarView.date8}" effect="fold" />
-
-                        <p:outputLabel for="mask" value="Mask:" />
-                        <p:calendar id="mask" value="#{calendarView.date9}" pattern="dd-MM-yyyy" mask="true" />
-
-                        <p:outputLabel for="datetime" value="Datetime:" />
-                        <p:calendar id="datetime" value="#{calendarView.date10}" pattern="MM/dd/yyyy HH:mm:ss" />
-
-                        <p:outputLabel for="time" value="Time:" />
-                        <p:calendar id="time" value="#{calendarView.date11}" pattern="HH:mm" timeOnly="true"  />
-                    </h:panelGrid>
+                        <div style="clear:both" />
+                    </h:form>
+                    </div>
 
                 </p:fieldset>
 			</div>

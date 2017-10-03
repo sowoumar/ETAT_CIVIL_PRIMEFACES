@@ -1,0 +1,10 @@
+.fieldsetArrangement {
+    display: inline-flex;
+   width: 50%;
+}
+
+.divClass {
+    display: flex;
+    flex: 1;
+    align-content: space-around;
+}
