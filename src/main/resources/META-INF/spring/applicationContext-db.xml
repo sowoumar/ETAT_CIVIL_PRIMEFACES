@@ -28,7 +28,8 @@
     	<!-- Define Hibernate JPA Vendor Adapter -->
         <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
             <property name="generateDdl" value="true" />
-            <property name="database" value="H2" />
+            <property name="database" value="MYSQL" />
+            <!--<property name="database" value="H2" />-->
         </bean>
     	</property>
     	<!-- Persistence Unit -->
@@ -36,11 +37,18 @@
 	</bean>
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="${mysql-connector-java.driverClassName}" />
+    	<property name="url" value="${mysql-connector-java.url}" />
+    	<property name="username" value="${mysql-connector-java.username}" />
+    	<property name="password" value="${mysql-connector-java.password}" />
+	</bean>
+
+	<!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     	<property name="driverClassName" value="${h2.driverClassName}" />
     	<property name="url" value="${h2.url}" />
     	<property name="username" value="${h2.username}" />
     	<property name="password" value="${h2.password}" />
-	</bean>
+	</bean>-->
 
 
 	<bean
