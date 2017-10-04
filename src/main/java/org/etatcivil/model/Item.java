@@ -1,4 +1,4 @@
-package org.slevin.common;
+package org.etatcivil.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-
-import org.slevin.common.Order;
 
 @Entity
 @NamedQueries({

@@ -1,4 +1,4 @@
-package org.slevin.common;
+package org.etatcivil.model;
 
 import java.util.Collection;
 import java.util.Date;
@@ -12,8 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.slevin.common.Item;
 
 @Entity
 @Table(name="T_ORDER")

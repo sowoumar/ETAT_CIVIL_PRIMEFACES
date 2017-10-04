@@ -1,18 +1,21 @@
-package org.slevin.prime.faces.bean;
+package org.etatcivil.web.controller;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import org.primefaces.context.RequestContext;
 
 @ManagedBean
+@RequestScoped
 public class UserLoginView {
 
     private String username;
 
     private String password;
+    private String pageMenu;
 
     public String getUsername() {
         return username;
@@ -37,6 +40,7 @@ public class UserLoginView {
 
         if(username != null && username.equals("admin") && password != null && password.equals("admin")) {
             loggedIn = true;
+            getPageMenu();
             message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", username);
         } else {
             loggedIn = false;
@@ -45,5 +49,9 @@ public class UserLoginView {
 
         FacesContext.getCurrentInstance().addMessage(null, message);
         context.addCallbackParam("loggedIn", loggedIn);
+    }
+
+    public String getPageMenu() {
+        return "menu";
     }
 }

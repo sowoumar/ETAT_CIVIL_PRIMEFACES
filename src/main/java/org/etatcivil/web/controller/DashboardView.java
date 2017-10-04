@@ -1,4 +1,4 @@
-package org.slevin.prime.faces.bean;
+package org.etatcivil.web.controller;
 
 import java.io.Serializable;
 import javax.annotation.PostConstruct;

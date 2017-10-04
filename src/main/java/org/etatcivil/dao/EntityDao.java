@@ -1,4 +1,4 @@
-package org.slevin.dao;
+package org.etatcivil.dao;
 
 import java.util.List;
 

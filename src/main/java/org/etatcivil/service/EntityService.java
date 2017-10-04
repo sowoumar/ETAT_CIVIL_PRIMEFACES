@@ -1,4 +1,4 @@
-package org.slevin.dao.service;
+package org.etatcivil.service;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.hibernate.HibernateException;
-import org.slevin.dao.EntityDao;
+import org.etatcivil.dao.EntityDao;
 import org.springframework.transaction.annotation.Transactional;
 
 public class EntityService<E>  implements EntityDao<E> {

@@ -1,4 +1,4 @@
-package org.slevin.tests;
+package org.etatcivil.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -7,10 +7,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slevin.common.Item;
-import org.slevin.common.Order;
-import org.slevin.dao.ItemsDao;
-import org.slevin.dao.OrdersDao;
+import org.etatcivil.model.Item;
+import org.etatcivil.model.Order;
+import org.etatcivil.dao.ItemsDao;
+import org.etatcivil.dao.OrdersDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;

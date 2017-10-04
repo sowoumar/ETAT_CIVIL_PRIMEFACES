@@ -1,7 +1,7 @@
-package org.slevin.dao.service;
+package org.etatcivil.service;
 
-import org.slevin.common.Order;
-import org.slevin.dao.OrdersDao;
+import org.etatcivil.model.Order;
+import org.etatcivil.dao.OrdersDao;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
