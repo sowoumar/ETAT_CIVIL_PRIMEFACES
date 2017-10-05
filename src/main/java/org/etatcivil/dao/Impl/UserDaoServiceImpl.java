@@ -24,8 +24,6 @@ public class UserDaoServiceImpl extends EntityDaoServiceImpl<User> implements Us
     @PostConstruct
     public void init() {
         this.userMapper = new UserMapperImpl();
-
-        findUserByLoginAndPassword("oumar","sow");
     }
 
     @Override
