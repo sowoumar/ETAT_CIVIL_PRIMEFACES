@@ -1,4 +1,4 @@
-package org.etatcivil.service;
+package org.etatcivil.dao.Impl;
 
 import org.etatcivil.model.Order;
 import org.etatcivil.dao.OrdersDao;
@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component
 @Transactional
-public class OrderService extends EntityService<Order> implements OrdersDao {
+public class OrderDaoServiceImpl extends EntityDaoServiceImpl<Order> implements OrdersDao {
 
 }

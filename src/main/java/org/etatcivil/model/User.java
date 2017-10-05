@@ -10,6 +10,7 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "person.findAll", query = "select p from User p"),
+        @NamedQuery(name = "person.findByLoginAndPassword", query = "select count (p) from User p where p.firstname = :firstname and p.name = :name"),
 })
 public class User {
 

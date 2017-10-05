@@ -1,10 +1,9 @@
-package org.etatcivil.service;
+package org.etatcivil.dao.Impl;
 
 
 import org.apache.log4j.Logger;
 import org.etatcivil.dao.ItemsDao;
 import org.etatcivil.model.Item;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +13,7 @@ import java.util.List;
 
 @Component
 @Transactional
-public class ItemService extends EntityService<Item> implements ItemsDao {
+public class ItemDaoServiceImpl extends EntityDaoServiceImpl<Item> implements ItemsDao {
 
 
     @Override
@@ -23,7 +22,7 @@ public class ItemService extends EntityService<Item> implements ItemsDao {
         try {
             results = super.findAll();
         } catch (Exception e) {
-            Logger.getLogger(ItemService.class);
+            Logger.getLogger(ItemDaoServiceImpl.class);
         }
         return results;
     }

@@ -1,4 +1,4 @@
-package org.etatcivil.service;
+package org.etatcivil.dao.Impl;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -13,7 +13,7 @@ import org.hibernate.HibernateException;
 import org.etatcivil.dao.EntityDao;
 import org.springframework.transaction.annotation.Transactional;
 
-public class EntityService<E>  implements EntityDao<E> {
+public class EntityDaoServiceImpl<E>  implements EntityDao<E> {
 
 	
 
