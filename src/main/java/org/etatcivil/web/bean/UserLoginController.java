@@ -35,10 +35,10 @@ public class UserLoginController implements Serializable {
         if (result == 1) {
             navigation = "menu";
             loggedIn = true;
-            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", userLoginBean.getUsername());
+            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienvenue", userLoginBean.getUsername());
         } else {
             loggedIn = false;
-            message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
+            message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Login ou Mot de passe incorrect");
         }
 
         FacesContext.getCurrentInstance().addMessage(null, message);
@@ -63,4 +63,5 @@ public class UserLoginController implements Serializable {
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
+
 }

@@ -1,5 +1,7 @@
 package org.etatcivil.web.controller;
 
+import org.etatcivil.dto.UserDto;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
