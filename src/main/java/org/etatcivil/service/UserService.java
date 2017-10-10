@@ -7,14 +7,15 @@ import org.etatcivil.dto.UserDto;
 import org.etatcivil.mapper.UserMapper;
 import org.etatcivil.mapper.UserMapperImpl;
 import org.etatcivil.model.Item;
+import org.etatcivil.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class UserService implements Serializable {
 
     /**
@@ -30,6 +31,9 @@ public class UserService implements Serializable {
 
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private UserRepository userRepository;
 
     private UserMapper userMapper;
 
@@ -80,7 +84,7 @@ public class UserService implements Serializable {
         boolean result = false;
         Long isUserExist = checkAuthenfication(userDto.getFirstname(), userDto.getName());
 
-      if (isUserExist == 0) {
+        if (isUserExist == 0) {
             try {
                 userDao.persist(userMapper.userDtoToUser(userDto));
                 result = true;

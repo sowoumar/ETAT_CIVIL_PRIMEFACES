@@ -37,7 +37,7 @@ public class UserDaoServiceImpl extends EntityDaoServiceImpl<User> implements Us
     @Override
     public Long findUserByLoginAndPassword(String login, String password) {
         UserDto userDto = new UserDto();
-        Long count =0L;
+        Long count = 0L;
         try {
 
 
@@ -46,7 +46,7 @@ public class UserDaoServiceImpl extends EntityDaoServiceImpl<User> implements Us
             count = result;
         } catch (Exception e) {
 
-            if (e.getMessage().equals("No entity found for query")){
+            if (e.getMessage().equals("No entity found for query")) {
 
             }
             System.out.println(e);
