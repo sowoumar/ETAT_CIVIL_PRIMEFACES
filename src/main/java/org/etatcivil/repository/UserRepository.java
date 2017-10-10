@@ -12,4 +12,8 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findOneByName(String name);
+
+    User findByFirstnameAndName(String firstname, String name);
+
+    Long countUsersByFirstnameAndName(String firstname, String name);
 }

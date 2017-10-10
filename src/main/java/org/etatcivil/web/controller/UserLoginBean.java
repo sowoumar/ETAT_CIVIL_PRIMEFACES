@@ -11,6 +11,15 @@ public class UserLoginBean {
     private String username;
 
     private String password;
+    private UserDto userDto = new UserDto();
+
+    public UserDto getUserDto() {
+        return userDto;
+    }
+
+    public void setUserDto(UserDto userDto) {
+        this.userDto = userDto;
+    }
 
     public String getUsername() {
         return username;

@@ -8,3 +8,7 @@
     flex: 1;
     align-content: space-around;
 }
+
+.login {
+    display: inline-block !important;
+}

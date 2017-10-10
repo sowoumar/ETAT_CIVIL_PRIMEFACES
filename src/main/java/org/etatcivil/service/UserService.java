@@ -52,6 +52,7 @@ public class UserService implements Serializable {
     }
 
     public Long checkAuthenfication(String username, String password) {
+        Long result = userRepository.countUsersByFirstnameAndName(username, password);
         return userDao.findUserByLoginAndPassword(username, password);
 
     }
@@ -82,16 +83,15 @@ public class UserService implements Serializable {
 
     public boolean createUser(UserDto userDto) {
         boolean result = false;
-        Long isUserExist = checkAuthenfication(userDto.getFirstname(), userDto.getName());
 
-        if (isUserExist == 0) {
+
             try {
-                userDao.persist(userMapper.userDtoToUser(userDto));
+               userRepository.save(userMapper.userDtoToUser(userDto));
                 result = true;
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
+
         return result;
     }
 

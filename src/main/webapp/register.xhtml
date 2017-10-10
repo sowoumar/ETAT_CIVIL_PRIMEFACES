@@ -16,26 +16,25 @@
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <link rel="stylesheet" type="text/css" href="src/main/webapp/main.css"/>
-    <title>LOGIN</title>
+    <title>REGISTER</title>
 </h:head>
 
 <h:body>
     <h:form>
-        <p:panel id="panel" header="AUTHENTIFICATION" styleClass="login">
+        <p:panel id="panel" header="Création de compte">
 
-            <p:messages id="msgs"/>
+            <p:messages id="msgs" showDetail="true"/>
 
             <h:panelGrid columns="3" cellpadding="5">
                 <p:outputLabel for="firstname" value="Login:"/>
-                <p:inputText id="firstname" value="#{userLoginController.userLoginBean.username}" required="true"
-                             label="Firstname">
+                <p:inputText id="firstname" value="#{userRegisterController.userLoginBean.userDto.firstname}"
+                             required="true" label="Firstname">
                     <f:validateLength minimum="2"/>
                 </p:inputText>
                 <p:message for="firstname" display="icon"/>
 
                 <p:outputLabel for="lastname" value="Mot de passe:"/>
-                <p:password id="lastname" value="#{userLoginController.userLoginBean.password}" label="Lastname"
+                <p:password id="lastname" value="#{userRegisterController.userLoginBean.userDto.name}" label="Lastname"
                             required="true">
                     <f:validateLength minimum="2"/>
                     <p:ajax update="msgLastname" event="keyup"/>
@@ -44,12 +43,10 @@
 
             </h:panelGrid>
 
-            <p:commandButton value="Save" update="panel" action="#{userLoginController.login}" icon="ui-icon-check"/>
+            <p:commandButton value="Save" update="panel" actionListener="#{userRegisterController.create}"
+                             icon="ui-icon-check"/>
         </p:panel>
-        <br/>
-        <p:commandButton value="Créér un compte" action="/register"/>
     </h:form>
-
 
 </h:body>
 
